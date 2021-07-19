@@ -39,5 +39,6 @@ api.createWidget("topic-creation-panel-btn", {
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/discovery-list-container-top/topic-creation-panel">
+  <a href={{this.userPath}} data-user-card={{@user.username}}>{{avatar @user imageSize="large"}}</a>
   {{mount-widget widget="topic-creation-panel-btn"}}
 </script>
