@@ -1,0 +1,37 @@
+#topic-creation-panel-btn {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  color: var(--primary-high);
+  background: var(--vaperina-header-search);
+  height: 100%;
+  margin: 0;
+  padding: 0.6em 3em 0.6em 1em;
+  border: none;
+  border-radius: 25px;
+  transition: background .15s ease-out;
+  svg {
+    margin-right: 0.5em;
+    width: 0.7em;
+    color: var(--primary-high);
+  }
+  &:hover,
+  &focus {
+   background: var(--vaperina-header-search-focus);
+  }
+}
+
+@if $New_topic_button_text == "" {
+  #header-create-topic span {
+    display: none;
+  }
+  #new-create-topic i {
+    margin-right: 0;
+  }
+}
+
+@if $Hide_default_button == "true" {
+  button#create-topic {
+    display: none;
+  }
+}
