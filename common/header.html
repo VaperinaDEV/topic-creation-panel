@@ -1,4 +1,7 @@
 <script type="text/discourse-plugin" version="0.8">
+  
+
+<script type="text/discourse-plugin" version="0.8">
 const { iconNode } = require("discourse-common/lib/icon-library");
 const h = require("virtual-dom").h;
 
@@ -38,6 +41,9 @@ api.createWidget("topic-creation-panel-btn", {
 });
 </script>
 
-<script type="text/x-handlebars" data-template-name="/connectors/discovery-list-container-top/topic-creation-panel-btn">
+<script type="text/x-handlebars" data-template-name="/connectors/discovery-list-container-top/topic-creation-panel">
+  {{#user-link user=user}}
+    {{avatar user imageSize="large"}}
+  {{/user-link}}
   {{mount-widget widget="topic-creation-panel-btn"}}
 </script>
