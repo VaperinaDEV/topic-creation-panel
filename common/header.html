@@ -1,28 +1,8 @@
 <script type="text/discourse-plugin" version="0.8">
 const { iconNode } = require("discourse-common/lib/icon-library");
-const avatarImg = require('discourse/widgets/post').avatarImg;
 const h = require("virtual-dom").h;
 
 if (api.getCurrentUser() === null) return false;
-
-api.createWidget('md-nav-drawer-userinfo', {
-    userAvatarUrl() {
-        return user('avatar_template').replace("{size}", "64");
-    },
-
-    html() {
-        user
-        return [
-            this.userAvatar()
-        ];
-    },
-
-    userAvatar() {
-        return api.h('a.md-user-avatar', [
-            api.h('img', { src: this.userAvatarUrl() })
-        ]);
-    },
-});
 
 api.createWidget("topic-creation-panel-btn", {
   html(attrs) {
@@ -59,6 +39,5 @@ api.createWidget("topic-creation-panel-btn", {
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/discovery-list-container-top/topic-creation-panel">
-  {{mount-widget widget="md-nav-drawer-userinfo"}}
   {{mount-widget widget="topic-creation-panel-btn"}}
 </script>
