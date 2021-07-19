@@ -20,7 +20,7 @@ api.createWidget('md-nav-drawer-userinfo', {
     },
 
     userAvatar() {
-        return api.h('a.md-user-avatar', this.linkToUser(), [
+        return api.h('a.md-user-avatar', [
             api.h('img', { src: this.userAvatarUrl() })
         ]);
     },
