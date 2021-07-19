@@ -1,6 +1,5 @@
 <script type="text/discourse-plugin" version="0.8">
 const { iconNode } = require("discourse-common/lib/icon-library");
-import discourseComputed from "discourse-common/utils/decorators";
 const avatarImg = require('discourse/widgets/post').avatarImg;
 const h = require("virtual-dom").h;
 
@@ -41,6 +40,5 @@ api.createWidget("topic-creation-panel-btn", {
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/discovery-list-container-top/topic-creation-panel">
-  <a href={{this.userPath}} data-user-card={{@user.username}}>{{avatar @user imageSize="large"}}</a>
   {{mount-widget widget="topic-creation-panel-btn"}}
 </script>
