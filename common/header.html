@@ -1,28 +1,9 @@
 <script type="text/discourse-plugin" version="0.8">
 const { iconNode } = require("discourse-common/lib/icon-library");
 const avatarImg = require('discourse/widgets/post').avatarImg;
-const userPath = require('discourse/lib/url').userPath;
 const h = require("virtual-dom").h;
 
 if (api.getCurrentUser() === null) return false;
-
-
-api.createWidget('topic-creation-panel-avatar', {
-    userAvatarUrl() {
-        return this.user.get('avatar_template').replace("{size}", "64");
-    },
-   html() {
-        this.user = getUser();
-        return [
-            this.userAvatar()
-        ];
-    },
-    userAvatar() {
-        return api.h('a.topic-creation-panel-avatar', this.linkToUser(), [
-            api.h('img', { src: this.userAvatarUrl() })
-        ]);
-    },
-});
 
 api.createWidget("topic-creation-panel-btn", {
   html(attrs) {
@@ -59,6 +40,8 @@ api.createWidget("topic-creation-panel-btn", {
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/discovery-list-container-top/topic-creation-panel">
-  {{mount-widget widget="topic-creation-panel-avatar"}}
+  <div class="user-profile-avatar">
+    {{bound-avatar @user "huge"}}
+  </div>
   {{mount-widget widget="topic-creation-panel-btn"}}
 </script>
