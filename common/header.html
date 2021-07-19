@@ -7,11 +7,11 @@ if (api.getCurrentUser() === null) return false;
 
 api.createWidget('md-nav-drawer-userinfo', {
     userAvatarUrl() {
-        return this.user('avatar_template').replace("{size}", "64");
+        return user('avatar_template').replace("{size}", "64");
     },
 
     html() {
-        this.user
+        user
         return [
             this.userAvatar()
         ];
