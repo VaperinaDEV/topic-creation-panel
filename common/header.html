@@ -1,5 +1,7 @@
 <script type="text/discourse-plugin" version="0.8">
 const { iconNode } = require("discourse-common/lib/icon-library");
+import discourseComputed from "discourse-common/utils/decorators";
+const avatarImg = require('discourse/widgets/post').avatarImg;
 const h = require("virtual-dom").h;
 
 if (api.getCurrentUser() === null) return false;
